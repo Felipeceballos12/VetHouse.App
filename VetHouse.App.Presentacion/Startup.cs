@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VetHouse.App.Dominio;
 using VetHouse.App.Persistencia;
+using System;
 
 namespace VetHouse.App.Presentacion
 {
