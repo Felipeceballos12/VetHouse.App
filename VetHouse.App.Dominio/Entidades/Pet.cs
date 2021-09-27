@@ -6,7 +6,6 @@ namespace VetHouse.App.Dominio
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
         public TypePet Type { get; set; }
         public string Breed { get; set; }
         public string Address { get; set; }

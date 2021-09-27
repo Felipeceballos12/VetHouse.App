@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VetHouse.App.Persistencia;
 
 namespace VetHouse.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppVetHouseContext))]
-    partial class AppVetHouseContextModelSnapshot : ModelSnapshot
+    [Migration("20210927155620_Entidades_v3")]
+    partial class Entidades_v3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,7 +28,7 @@ namespace VetHouse.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CareSuggestionId")
+                    b.Property<int?>("CareSuggestionsId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAtHistory")
@@ -39,14 +41,14 @@ namespace VetHouse.App.Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("VitalSignId")
+                    b.Property<int?>("VitalSignsId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CareSuggestionId");
+                    b.HasIndex("CareSuggestionsId");
 
-                    b.HasIndex("VitalSignId");
+                    b.HasIndex("VitalSignsId");
 
                     b.ToTable("Histories");
 
@@ -217,17 +219,17 @@ namespace VetHouse.App.Persistencia.Migrations
 
             modelBuilder.Entity("VetHouse.App.Dominio.History", b =>
                 {
-                    b.HasOne("VetHouse.App.Dominio.CareSuggestion", "CareSuggestion")
+                    b.HasOne("VetHouse.App.Dominio.CareSuggestion", "CareSuggestions")
                         .WithMany()
-                        .HasForeignKey("CareSuggestionId");
+                        .HasForeignKey("CareSuggestionsId");
 
-                    b.HasOne("VetHouse.App.Dominio.VitalSign", "VitalSign")
+                    b.HasOne("VetHouse.App.Dominio.VitalSign", "VitalSigns")
                         .WithMany()
-                        .HasForeignKey("VitalSignId");
+                        .HasForeignKey("VitalSignsId");
 
-                    b.Navigation("CareSuggestion");
+                    b.Navigation("CareSuggestions");
 
-                    b.Navigation("VitalSign");
+                    b.Navigation("VitalSigns");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.Pet", b =>

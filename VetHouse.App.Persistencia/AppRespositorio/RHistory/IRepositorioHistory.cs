@@ -10,5 +10,8 @@ namespace VetHouse.App.Persistencia
         History UpdateHistory(History history);
         void DeleteHistory(int idHistory);
         History GetHistory(int idHistory);
+
+        CareSuggestion AddCareSuggestion(int idHistory, int idCareSuggestion);
+        VitalSign AddVitalSign(int idHistory, int idVitalSign);
     }
 }
