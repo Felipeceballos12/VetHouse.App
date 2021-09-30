@@ -6,12 +6,12 @@ namespace VetHouse.App.Persistencia
 {
     public class RepositorioOwner : IRepositorioOwner
     {
-        private readonly AppVetHouseContext _appVetHouseContext;
+        private readonly AppVetHouseContext _appVetHouseContext = new AppVetHouseContext();
 
-        public RepositorioOwner(AppVetHouseContext appVetHouseContext)
-        {
-            _appVetHouseContext = appVetHouseContext;
-        }
+        // public RepositorioOwner(AppVetHouseContext appVetHouseContext)
+        // {
+        //     _appVetHouseContext = appVetHouseContext;
+        // }
 
         Owner IRepositorioOwner.AddOwner(Owner owner)
         {

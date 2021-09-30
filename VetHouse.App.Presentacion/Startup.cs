@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using VetHouse.App.Dominio;
 using VetHouse.App.Persistencia;
 
 namespace VetHouse.App.Presentacion
@@ -26,6 +25,7 @@ namespace VetHouse.App.Presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<IRepositorioOwner, RepositorioOwner>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +34,7 @@ namespace VetHouse.App.Presentacion
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {

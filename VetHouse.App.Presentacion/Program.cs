@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using VetHouse.App.Dominio;
-using VetHouse.App.Persistencia;
 
 namespace VetHouse.App.Presentacion
 {
