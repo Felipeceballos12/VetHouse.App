@@ -6,8 +6,8 @@ namespace VetHouse.App.Persistencia
     public interface IRepositorioVitalSign
     {
         IEnumerable<VitalSign> GetAllVitalSign();
-        VitalSign AddVitalSign(VitalSign vet);
-        VitalSign UpdateVitalSign(VitalSign vet);
+        VitalSign AddVitalSign(VitalSign vitalSign);
+        VitalSign UpdateVitalSign(VitalSign vitalSign);
         void DeleteVitalSign(int idVitalSign);
         VitalSign GetVitalSign(int idVitalSign);
     }

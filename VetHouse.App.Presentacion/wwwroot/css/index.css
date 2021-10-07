@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: #000;
+  background-color: #fbfbff;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  background-color: #ffff;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: rgba(60, 64, 67, 0.2) 0px 2px 6px 0px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: end;
+  margin-right: 3rem;
+  align-items: center;
+  padding: 1rem 3rem 1rem 0;
+}
+
+.nav-links p {
+  margin-right: 1rem;
+}
+
+.profile-picture {
+  width: 2.7rem;
+  height: 2.6rem;
+  border-radius: 3rem;
+  background-color: #3232de;
+}
+
+.navSide {
+  height: 30rem;
+  width: 5.25rem;
+  position: fixed;
+  z-index: 1;
+  top: 7.5rem;
+  left: 0.7rem;
+  background-color: #fff;
+  overflow-x: hidden;
+  border-radius: 2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 1rem;
+}
+
+main {
+  margin-top: 3rem;
+  margin-left: 9rem;
+  margin-right: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-register-pet {
+  color: #3434df;
+  font-size: 2rem;
+}
+
+.icon-pet {
+  width: 3.313rem;
+  height: 3.125rem;
+  border-radius: 4rem;
+  background-color: #e4e4ef;
+  margin: 1rem 0;
+}
+
+.subTitle-register-pet {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-register-pet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/*
+
+    CSS INPUTS
+
+*/
+
+.form-group {
+  position: relative;
+  width: 23.5rem;
+  height: 2.875rem !important;
+  overflow: hidden;
+  margin: 0 2rem 1rem;
+}
+
+.form-group:nth-of-type(1),
+.form-group:nth-of-type(3),
+.form-group:nth-of-type(5),
+.form-group:nth-of-type(7) {
+  margin-left: 0;
+}
+
+.form-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 1.25rem 0 0.3rem;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #fbfbff;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  color: #97a1af;
+  pointer-events: none;
+  border-bottom: 2px solid #97a1af;
+}
+
+.form-label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #3434df;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 0.315rem;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus + .form-label .content-name,
+.form-input:valid + .form-label .content-name {
+  transform: translateY(-150%);
+  font-size: 0.625rem;
+  color: #3434df;
+}
+
+/* .form-input:invalid + .form-label .content-name {
+  font-size: 00.625rem;
+  color: red;
+} */
+
+.form-input:focus + .form-label::after,
+.form-input:valid + .form-label::after {
+  transform: translateX(0%);
+}
+
+/* END INPUT CSS */
+
+/* INPUT DATE BIRTH */
+
+/* .form-label-birth {
+  font-size: 0.625rem;
+  color: #3434df;
+}
+
+.form-group-birth {
+  position: relative;
+  width: 23.5rem;
+  height: 2.875rem !important;
+  overflow: hidden;
+  margin: 0 2rem 1rem;
+} */
+
+/* END INPUT DATE BIRTH */
+
+.container-btn {
+  margin-top: 2rem;
+}
+
+.btn-next {
+  padding: 0.5rem 3rem;
+  border-radius: 1rem;
+  background-color: #3434df;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+/* div,
+main,
+section {
+  border: 1px solid red;
+} */
+
+@media screen and (max-width: 1046px) {
+  .form-group:nth-of-type(2),
+  .form-group:nth-of-type(4),
+  .form-group:nth-of-type(6),
+  .form-group:nth-of-type(8) {
+    margin-left: 0;
+  }
+}

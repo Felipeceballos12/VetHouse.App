@@ -6,12 +6,12 @@ namespace VetHouse.App.Persistencia
 {
     public class RepositorioPet : IRepositorioPet
     {
-        private readonly AppVetHouseContext _appVetHouseContext;
+        private readonly AppVetHouseContext _appVetHouseContext = new AppVetHouseContext();
 
-        public RepositorioPet(AppVetHouseContext appVetHouseContext)
-        {
-            _appVetHouseContext = appVetHouseContext;
-        }
+        // public RepositorioPet(AppVetHouseContext appVetHouseContext)
+        // {
+        //     _appVetHouseContext = appVetHouseContext;
+        // }
 
         Pet IRepositorioPet.AddPet(Pet pet)
         {
