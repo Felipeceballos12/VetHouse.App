@@ -64,12 +64,18 @@ main {
   align-items: center;
 }
 
-.title-register-pet {
+.form-register {
+  display: none;
+}
+
+.title-register-pet,
+.title-register-owner {
   color: #3434df;
   font-size: 2rem;
 }
 
-.icon-pet {
+.icon-pet,
+.icon-owner {
   width: 3.313rem;
   height: 3.125rem;
   border-radius: 4rem;
@@ -77,12 +83,14 @@ main {
   margin: 1rem 0;
 }
 
-.subTitle-register-pet {
+.subTitle-register-pet,
+.subTitle-register-owner {
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
-.form-register-pet {
+.form-register-pet,
+.form-register-owner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -189,6 +197,8 @@ main {
 /* END INPUT DATE BIRTH */
 
 .container-btn {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 2rem;
 }
 
@@ -199,6 +209,18 @@ main {
   color: #fff;
   font-weight: 600;
   border: none;
+  cursor: pointer;
+}
+
+.btn-back {
+  padding: 0.5rem 3rem;
+  border-radius: 1rem;
+  background-color: #fbfbff;
+  color: #3434df;
+  font-weight: 600;
+  border: 1px solid #3434df;
+  margin-right: 2rem;
+  cursor: pointer;
 }
 
 /* div,
