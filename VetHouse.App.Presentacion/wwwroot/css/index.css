@@ -60,7 +60,13 @@ main {
   margin-left: 9rem;
   margin-right: 3rem;
   display: flex;
-  justify-content: center;
+  align-items: center;
+}
+
+.containerAssing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -70,9 +76,14 @@ main {
 
 .title-register-pet,
 .title-register-owner,
-.title-register-vet {
+.title-register-vet,
+.title-assign-vet-auxVet {
   color: #3434df;
   font-size: 2rem;
+}
+
+.title-assign-vet-auxVet {
+  margin-bottom: 2rem;
 }
 
 .icon-pet,
@@ -94,7 +105,8 @@ main {
 
 .form-register-pet,
 .form-register-owner,
-.form-register-vet {
+.form-register-vet,
+.form-add-vet {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -112,6 +124,14 @@ main {
   height: 2.875rem !important;
   overflow: hidden;
   margin: 0 2rem 1rem;
+}
+
+.form-group-assign {
+  position: relative;
+  width: 23.5rem;
+  height: 2.875rem !important;
+  overflow: hidden;
+  margin-right: 9rem;
 }
 
 .form-group:nth-of-type(1),

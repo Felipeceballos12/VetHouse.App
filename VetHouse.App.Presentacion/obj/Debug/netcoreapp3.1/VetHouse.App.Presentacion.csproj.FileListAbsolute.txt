@@ -82,4 +82,4 @@ C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Dominio.pdb
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Persistencia.pdb
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\OwnersFile\Index.cshtml.g.cs
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Vet\RegisterVet.cshtml.g.cs
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Register\RegisterVet.cshtml.g.cs

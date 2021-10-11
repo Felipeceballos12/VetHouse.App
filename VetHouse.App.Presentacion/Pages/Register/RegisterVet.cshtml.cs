@@ -25,7 +25,8 @@ namespace VetHouse.App.Presentacion.Pages
 
         public IActionResult OnPost(Vet newVet)
         {
-            _repoVet.AddVet(newVet);
+            var getVet = _repoVet.AddVet(newVet);
+            Console.WriteLine(getVet);
             return RedirectToPage("/Index");
         }
 
