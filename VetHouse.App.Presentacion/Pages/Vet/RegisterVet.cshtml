@@ -1,0 +1,58 @@
+﻿@page
+@model VetHouse.App.Presentacion.Pages.RegisterVetModel
+@{
+}
+<section class="section-register-vet">
+    <h1 class="title-register-vet">Vet</h1>
+    <div class="icon-vet"></div>
+    <p class="subTitle-register-vet">Register Vet</p>
+    <form method="post">
+        <div class="form-register-vet">
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newVet.Name" class="form-input" required>
+                <label asp-for="newVet.Name" class="form-label">
+                    <span class="content-name">Name</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newVet.Surname" class="form-input" required>
+                <label asp-for="newVet.Surname" class="form-label">
+                    <span class="content-name">Surname</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newVet.PhoneNumber" class="form-input" required>
+                <label asp-for="newVet.PhoneNumber" class="form-label">
+                    <span class="content-name">Phone Number</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input asp-for="newVet.Gender" class="form-input" required>
+                <label asp-for="newVet.Gender" class="form-label">
+                    <span class="content-name">Gender</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newVet.Email" class="form-input" required>
+                <label asp-for="newVet.Email" class="form-label">
+                    <span class="content-name">Email</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newVet.Specialty" class="form-input" required>
+                <label asp-for="newVet.Specialty" class="form-label">
+                    <span class="content-name">Specialty</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newVet.RegisterRethus" class="form-input" required>
+                <label asp-for="newVet.RegisterRethus" class="form-label">
+                    <span class="content-name">Register Rethus</span>
+                </label>
+            </div>
+        </div>
+        <div class="container-btn">
+            <button class="btn-next" type="submit">REGISTER</button>
+        </div>
+    </form>
+</section>

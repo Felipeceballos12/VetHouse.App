@@ -66,26 +66,6 @@ namespace VetHouse.App.Persistencia
             return _appVetHouseContext.Pets.FirstOrDefault(p => p.Id == idPet);
         }
 
-        Vet IRepositorioPet.AssignVet(int idPet, int idVet)
-        {
-            var petFound = _appVetHouseContext.Pets.FirstOrDefault(p => p.Id == idPet);
-
-            if (petFound != null)
-            {
-                var vetFound = _appVetHouseContext.Vets.FirstOrDefault(v => v.Id == idVet);
-
-                if (vetFound != null)
-                {
-                    petFound.Vet = vetFound;
-                    _appVetHouseContext.SaveChanges();
-                }
-
-                return vetFound;
-            }
-
-            return null;
-        }
-
         AuxVet IRepositorioPet.AssignAuxVet(int idPet, int idAuxVet)
         {
             var petFound = _appVetHouseContext.Pets.FirstOrDefault(p => p.Id == idPet);

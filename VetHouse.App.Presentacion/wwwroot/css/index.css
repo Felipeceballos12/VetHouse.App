@@ -69,13 +69,15 @@ main {
 }
 
 .title-register-pet,
-.title-register-owner {
+.title-register-owner,
+.title-register-vet {
   color: #3434df;
   font-size: 2rem;
 }
 
 .icon-pet,
-.icon-owner {
+.icon-owner,
+.icon-vet {
   width: 3.313rem;
   height: 3.125rem;
   border-radius: 4rem;
@@ -84,13 +86,15 @@ main {
 }
 
 .subTitle-register-pet,
-.subTitle-register-owner {
+.subTitle-register-owner,
+.subTitle-register-vet {
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
 .form-register-pet,
-.form-register-owner {
+.form-register-owner,
+.form-register-vet {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

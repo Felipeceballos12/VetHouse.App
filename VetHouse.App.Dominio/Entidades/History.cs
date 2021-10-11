@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System;
 
 namespace VetHouse.App.Dominio
@@ -8,7 +9,7 @@ namespace VetHouse.App.Dominio
         public System.DateTime CreatedAtHistory { get; set; }
         public String Diagnose { get; set; }
 
-        public CareSuggestion CareSuggestion { get; set; }
-        public VitalSign VitalSign { get; set; }
+        public List<CareSuggestion> CareSuggestions { get; set; }
+        public List<VitalSign> VitalSigns { get; set; }
     }
 }

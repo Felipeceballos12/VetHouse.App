@@ -2,9 +2,9 @@ using System;
 
 namespace VetHouse.App.Dominio
 {
-    public class CareSuggestion : History
+    public class CareSuggestion
     {
-        public new int Id { get; set; }
+        public int Id { get; set; }
         public String Description { get; set; }
 
         public System.DateTime CreatedAtCareSuggestion { get; set; }

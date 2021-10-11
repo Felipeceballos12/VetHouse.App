@@ -18,7 +18,6 @@ namespace VetHouse.App.Dominio
 
         /// agregando las relaciones con las clases relacionadas
         public AuxVet AuxVet { get; set; }
-        public Vet Vet { get; set; }
         public History History { get; set; }
         public Owner Owner { get; set; }
 

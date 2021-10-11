@@ -59,44 +59,42 @@ namespace VetHouse.App.Persistencia
             return _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
         }
 
-        CareSuggestion IRepositorioHistory.AddCareSuggestion(int idHistory, int idCareSuggestion)
+        // CareSuggestion IRepositorioHistory.AddCareSuggestion(int idHistory, int idCareSuggestion)
+        // {
+        //     var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
+
+        //     if (historyFound != null)
+        //     {
+        //         var careSuggestionFound = _appVetHouseContext.CareSuggestions.FirstOrDefault(cs => cs.Id == idCareSuggestion);
+
+        //         if (careSuggestionFound != null)
+        //         {
+        //             historyFound.CareSuggestions = careSuggestionFound;
+        //             _appVetHouseContext.SaveChanges();
+        //         }
+
+        //         return careSuggestionFound;
+        //     }
+
+        //     return null;
+        // }
+
+        void IRepositorioHistory.AddVitalSign(int idHistory, VitalSign vitalSign)
         {
             var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
 
             if (historyFound != null)
             {
-                var careSuggestionFound = _appVetHouseContext.CareSuggestions.FirstOrDefault(cs => cs.Id == idCareSuggestion);
-
-                if (careSuggestionFound != null)
-                {
-                    historyFound.CareSuggestion = careSuggestionFound;
-                    _appVetHouseContext.SaveChanges();
-                }
-
-                return careSuggestionFound;
+                historyFound.VitalSigns.Add(vitalSign);
+                _appVetHouseContext.SaveChanges();
             }
-
-            return null;
-        }
-
-        VitalSign IRepositorioHistory.AddVitalSign(int idHistory, int idVitalSign)
-        {
-            var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
-
-            if (historyFound != null)
+            else
             {
-                var vitalSignFound = _appVetHouseContext.VitalSigns.FirstOrDefault(vs => vs.Id == idVitalSign);
-
-                if (vitalSignFound != null)
-                {
-                    historyFound.VitalSign = vitalSignFound;
-                    _appVetHouseContext.SaveChanges();
-                }
-
-                return vitalSignFound;
+                historyFound.VitalSigns = new List<VitalSign>();
+                historyFound.VitalSigns.Add(vitalSign);
+                _appVetHouseContext.SaveChanges();
             }
 
-            return null;
         }
     }
 }
