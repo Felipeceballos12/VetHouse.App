@@ -12,6 +12,7 @@ namespace VetHouse.App.Presentacion.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -19,7 +20,7 @@ namespace VetHouse.App.Presentacion.Pages
 
         public void OnGet()
         {
-
+            // vet = _repoVet.GetVet(1);
         }
     }
 }

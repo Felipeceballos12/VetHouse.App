@@ -139,6 +139,9 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Property<float>("Weight")
                         .HasColumnType("real");
 
+                    b.Property<int>("idVet")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AuxVetId");
@@ -238,7 +241,7 @@ namespace VetHouse.App.Persistencia.Migrations
                         .WithMany()
                         .HasForeignKey("OwnerId");
 
-                    b.HasOne("VetHouse.App.Dominio.Vet", null)
+                    b.HasOne("VetHouse.App.Dominio.Vet", "Vet")
                         .WithMany("Pets")
                         .HasForeignKey("VetId");
 
@@ -247,6 +250,8 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Navigation("History");
 
                     b.Navigation("Owner");
+
+                    b.Navigation("Vet");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.VitalSign", b =>

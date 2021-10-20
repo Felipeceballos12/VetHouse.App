@@ -44,6 +44,8 @@ btnActive.forEach(btn => {
             currentFormRegister += 1;
         } else if (btn.textContent.toUpperCase() === "BACK") {
             currentFormRegister -= 1;
+        } else {
+            document.querySelector(".btn-next").type = "submit";
         }
 
         showForm(currentFormRegister, formCurrent);

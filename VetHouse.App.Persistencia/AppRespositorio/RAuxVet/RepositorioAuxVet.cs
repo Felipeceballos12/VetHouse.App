@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VetHouse.App.Dominio;
+using Microsoft.EntityFrameworkCore;
 
 namespace VetHouse.App.Persistencia
 {
@@ -23,7 +24,7 @@ namespace VetHouse.App.Persistencia
 
         void IRepositorioAuxVet.DeleteAuxVet(int idAuxVet)
         {
-            var auxVetFound = _appVetHouseContext.AuxVets.FirstOrDefault(av => av.Id == idAuxVet);
+            var auxVetFound = _appVetHouseContext.AuxVets.Find(idAuxVet);
 
             if (auxVetFound == null)
             {

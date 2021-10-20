@@ -1,0 +1,60 @@
+﻿@page
+@using VetHouse.App.Dominio
+@model VetHouse.App.Presentacion.Pages.AddVitalSignModel
+@{
+}
+<section class="section-add-vs">
+    <div>
+        <form method="post">
+            <div class="containerPetDetails">
+                <p><strong>Name: </strong>@Model.pet.Name</p>
+                <p><strong>Breed: </strong>@Model.pet.Breed</p>
+                <p><strong>Gender: </strong>@Model.pet.Gender</p>
+                <p><strong>Date of birth: </strong>@Model.pet.DateOfBirth</p>
+                <input type="hidden" name="idpet" value="@Model.pet.Id">
+            </div>
+            <div class="containerAddVS">
+                <div>
+                    <h1 class="title-add-vs">Add Vital Sign</h1>
+                    <div class="form-group-addVS">
+                        <input autocomplete="off" asp-for="newVitalSign.HeartRate" class="form-input" required>
+                        <label asp-for="newVitalSign.HeartRate" class="form-label">
+                            <span class="content-name">Heart Rate</span>
+                        </label>
+                    </div>
+                    <div class="form-group-addVS">
+                        <input autocomplete="off" asp-for="newVitalSign.BreathingFreq" class="form-input" required>
+                        <label asp-for="newVitalSign.BreathingFreq" class="form-label">
+                            <span class="content-name">Breathing Frequency</span>
+                        </label>
+                    </div>
+                    <div class="form-group-addVS">
+                        <input autocomplete="off" asp-for="newVitalSign.Temperature" class="form-input" required>
+                        <label asp-for="newVitalSign.Temperature" class="form-label">
+                            <span class="content-name">Temperature</span>
+                        </label>
+                    </div>
+                    <div class="form-group-addVS">
+                        <select asp-for="newVitalSign.HealthStatus"
+                            asp-items="Html.GetEnumSelectList<TypeHealthStatus>()" class="form-input" required></select>
+                        <label asp-for="newVitalSign.HealthStatus" class="form-label">
+                            <span class="content-name">Health Status</span>
+                        </label>
+                    </div>
+                    <div class="form-group-addVS">
+                        <input autocomplete="off" asp-for="newVitalSign.CreatedAtVitalSign" class="form-input">
+                        <label asp-for="newVitalSign.CreatedAtVitalSign" class="form-label">
+                            <span class="content-name">CreatedAtVitalSign</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <img src="~/imgs/dog.png" alt="Dog">
+                </div>
+            </div>
+            <div class="container-btn">
+                <button class="btn-next" type="submit">ADD VITAL SIGN</button>
+            </div>
+        </form>
+    </div>
+</section>

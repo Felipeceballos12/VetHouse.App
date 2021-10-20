@@ -3,10 +3,10 @@ C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\bin\Debug\netstandard2.1\VetHouse.App.Persistencia.pdb
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\bin\Debug\netstandard2.1\VetHouse.App.Dominio.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\bin\Debug\netstandard2.1\VetHouse.App.Dominio.pdb
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.csprojAssemblyReference.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.AssemblyInfoInputs.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.AssemblyInfo.cs
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.csproj.CoreCompileInputs.cache
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.csproj.CopyComplete
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.pdb
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.csproj.AssemblyReference.cache
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Persistencia\obj\Debug\netstandard2.1\VetHouse.App.Persistencia.GeneratedMSBuildEditorConfig.editorconfig

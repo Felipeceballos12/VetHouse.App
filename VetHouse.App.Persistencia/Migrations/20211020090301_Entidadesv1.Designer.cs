@@ -10,8 +10,8 @@ using VetHouse.App.Persistencia;
 namespace VetHouse.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppVetHouseContext))]
-    [Migration("20210923014602_Entidades")]
-    partial class Entidades
+    [Migration("20211020090301_Entidadesv1")]
+    partial class Entidadesv1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,6 +21,29 @@ namespace VetHouse.App.Persistencia.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("VetHouse.App.Dominio.CareSuggestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAtCareSuggestion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("HistoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HistoryId");
+
+                    b.ToTable("CareSuggestions");
+                });
+
             modelBuilder.Entity("VetHouse.App.Dominio.History", b =>
                 {
                     b.Property<int>("Id")
@@ -28,26 +51,15 @@ namespace VetHouse.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CareSuggestionsId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAtHistory")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Diagnose")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CareSuggestionsId");
-
                     b.ToTable("Histories");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("History");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.Person", b =>
@@ -120,9 +132,6 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Property<int?>("OwnerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Surname")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
@@ -145,25 +154,18 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.ToTable("Pets");
                 });
 
-            modelBuilder.Entity("VetHouse.App.Dominio.CareSuggestion", b =>
-                {
-                    b.HasBaseType("VetHouse.App.Dominio.History");
-
-                    b.Property<DateTime>("CreatedAtCareSuggestion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("CareSuggestion");
-                });
-
             modelBuilder.Entity("VetHouse.App.Dominio.VitalSign", b =>
                 {
-                    b.HasBaseType("VetHouse.App.Dominio.History");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<float>("BreathingFreq")
                         .HasColumnType("real");
+
+                    b.Property<DateTime>("CreatedAtVitalSign")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("HealthStatus")
                         .HasColumnType("int");
@@ -171,10 +173,17 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Property<float>("HeartRate")
                         .HasColumnType("real");
 
+                    b.Property<int?>("HistoryId")
+                        .HasColumnType("int");
+
                     b.Property<float>("Temperature")
                         .HasColumnType("real");
 
-                    b.HasDiscriminator().HasValue("VitalSign");
+                    b.HasKey("Id");
+
+                    b.HasIndex("HistoryId");
+
+                    b.ToTable("VitalSigns");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.AuxVet", b =>
@@ -210,13 +219,11 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.HasDiscriminator().HasValue("Vet");
                 });
 
-            modelBuilder.Entity("VetHouse.App.Dominio.History", b =>
+            modelBuilder.Entity("VetHouse.App.Dominio.CareSuggestion", b =>
                 {
-                    b.HasOne("VetHouse.App.Dominio.CareSuggestion", "CareSuggestions")
-                        .WithMany()
-                        .HasForeignKey("CareSuggestionsId");
-
-                    b.Navigation("CareSuggestions");
+                    b.HasOne("VetHouse.App.Dominio.History", null)
+                        .WithMany("CareSuggestions")
+                        .HasForeignKey("HistoryId");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.Pet", b =>
@@ -233,8 +240,8 @@ namespace VetHouse.App.Persistencia.Migrations
                         .WithMany()
                         .HasForeignKey("OwnerId");
 
-                    b.HasOne("VetHouse.App.Dominio.Vet", "Vet")
-                        .WithMany()
+                    b.HasOne("VetHouse.App.Dominio.Vet", null)
+                        .WithMany("Pets")
                         .HasForeignKey("VetId");
 
                     b.Navigation("AuxVet");
@@ -242,8 +249,25 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Navigation("History");
 
                     b.Navigation("Owner");
+                });
 
-                    b.Navigation("Vet");
+            modelBuilder.Entity("VetHouse.App.Dominio.VitalSign", b =>
+                {
+                    b.HasOne("VetHouse.App.Dominio.History", null)
+                        .WithMany("VitalSigns")
+                        .HasForeignKey("HistoryId");
+                });
+
+            modelBuilder.Entity("VetHouse.App.Dominio.History", b =>
+                {
+                    b.Navigation("CareSuggestions");
+
+                    b.Navigation("VitalSigns");
+                });
+
+            modelBuilder.Entity("VetHouse.App.Dominio.Vet", b =>
+                {
+                    b.Navigation("Pets");
                 });
 #pragma warning restore 612, 618
         }

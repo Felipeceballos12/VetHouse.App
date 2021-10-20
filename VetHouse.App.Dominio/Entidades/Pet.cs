@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace VetHouse.App.Dominio
 {
@@ -21,5 +22,7 @@ namespace VetHouse.App.Dominio
         public History History { get; set; }
         public Owner Owner { get; set; }
 
+        public int idVet { get; set; }
+        public Vet Vet { get; set; }
     }
 }

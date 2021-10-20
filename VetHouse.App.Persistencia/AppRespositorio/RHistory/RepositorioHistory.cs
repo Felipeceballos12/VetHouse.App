@@ -1,17 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using VetHouse.App.Dominio;
+using Microsoft.EntityFrameworkCore;
 
 namespace VetHouse.App.Persistencia
 {
     public class RepositorioHistory : IRepositorioHistory
     {
-        private readonly AppVetHouseContext _appVetHouseContext;
-
-        public RepositorioHistory(AppVetHouseContext appVetHouseContext)
-        {
-            _appVetHouseContext = appVetHouseContext;
-        }
+        private readonly AppVetHouseContext _appVetHouseContext = new AppVetHouseContext();
 
         History IRepositorioHistory.AddHistory(History history)
         {
@@ -23,7 +19,7 @@ namespace VetHouse.App.Persistencia
 
         void IRepositorioHistory.DeleteHistory(int idHistory)
         {
-            var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
+            var historyFound = _appVetHouseContext.Histories.Find(idHistory);
 
             if (historyFound == null)
             {
@@ -36,12 +32,16 @@ namespace VetHouse.App.Persistencia
 
         IEnumerable<History> IRepositorioHistory.GetAllHistory()
         {
-            return _appVetHouseContext.Histories;
+            var allHistories = _appVetHouseContext.Histories
+                                .Include(h => h.CareSuggestions)
+                                .ToList();
+
+            return allHistories;
         }
 
         History IRepositorioHistory.UpdateHistory(History history)
         {
-            var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == history.Id);
+            var historyFound = _appVetHouseContext.Histories.Find(history.Id);
 
             if (historyFound != null)
             {
@@ -56,45 +56,75 @@ namespace VetHouse.App.Persistencia
 
         History IRepositorioHistory.GetHistory(int idHistory)
         {
-            return _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
+            return _appVetHouseContext.Histories.Include(history => history.VitalSigns).Include(history => history.CareSuggestions).FirstOrDefault(history => history.Id == idHistory);
         }
 
-        // CareSuggestion IRepositorioHistory.AddCareSuggestion(int idHistory, int idCareSuggestion)
-        // {
-        //     var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
-
-        //     if (historyFound != null)
-        //     {
-        //         var careSuggestionFound = _appVetHouseContext.CareSuggestions.FirstOrDefault(cs => cs.Id == idCareSuggestion);
-
-        //         if (careSuggestionFound != null)
-        //         {
-        //             historyFound.CareSuggestions = careSuggestionFound;
-        //             _appVetHouseContext.SaveChanges();
-        //         }
-
-        //         return careSuggestionFound;
-        //     }
-
-        //     return null;
-        // }
-
-        void IRepositorioHistory.AddVitalSign(int idHistory, VitalSign vitalSign)
+        CareSuggestion IRepositorioHistory.AddCareSuggestion(int idHistory, int idCareSuggestion)
         {
-            var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
+            var historyFound = _appVetHouseContext.Histories.Find(idHistory);
+            var careSuggestionFound = _appVetHouseContext.CareSuggestions.Find(idCareSuggestion);
 
             if (historyFound != null)
             {
-                historyFound.VitalSigns.Add(vitalSign);
-                _appVetHouseContext.SaveChanges();
-            }
-            else
-            {
-                historyFound.VitalSigns = new List<VitalSign>();
-                historyFound.VitalSigns.Add(vitalSign);
-                _appVetHouseContext.SaveChanges();
+                if (historyFound.CareSuggestions != null)
+                {
+                    historyFound.CareSuggestions.Add(careSuggestionFound);
+                }
+                else
+                {
+                    historyFound.CareSuggestions = new List<CareSuggestion>();
+                    historyFound.CareSuggestions.Add(careSuggestionFound);
+                }
+
+                var historyFound2 = _appVetHouseContext.Histories.Find(historyFound.Id);
+
+                if (historyFound2 != null)
+                {
+                    historyFound2.CreatedAtHistory = historyFound.CreatedAtHistory;
+                    historyFound2.Diagnose = historyFound.Diagnose;
+
+                    _appVetHouseContext.SaveChanges();
+
+                    return careSuggestionFound;
+                }
             }
 
+            return null;
         }
+
+
+        VitalSign IRepositorioHistory.AddVitalSign(int idHistory, int idVitalSign)
+        {
+            var historyFound = _appVetHouseContext.Histories.Find(idHistory);
+            var vitalSignFound = _appVetHouseContext.VitalSigns.Find(idVitalSign);
+
+            if (historyFound != null)
+            {
+                if (historyFound.VitalSigns != null)
+                {
+                    historyFound.VitalSigns.Add(vitalSignFound);
+                }
+                else
+                {
+                    historyFound.VitalSigns = new List<VitalSign>();
+                    historyFound.VitalSigns.Add(vitalSignFound);
+                }
+
+                var historyFound2 = _appVetHouseContext.Histories.Find(historyFound.Id);
+
+                if (historyFound2 != null)
+                {
+                    historyFound2.CreatedAtHistory = historyFound.CreatedAtHistory;
+                    historyFound2.Diagnose = historyFound.Diagnose;
+
+                    _appVetHouseContext.SaveChanges();
+
+                    return vitalSignFound;
+                }
+            }
+
+            return null;
+        }
+
     }
 }

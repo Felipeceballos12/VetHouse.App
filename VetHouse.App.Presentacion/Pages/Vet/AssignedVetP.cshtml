@@ -1,0 +1,48 @@
+﻿@page
+@using VetHouse.App.Dominio
+@model VetHouse.App.Presentacion.Pages.AssignedVetPModel
+@{
+}
+<section class="containerSectionSearch">
+    <div class="containerResultSearch">
+        @if (Model.pets != null)
+        {
+            @foreach (var pet in Model.pets)
+            {
+                <a class="linkPet" asp-page="./PetDetails" asp-route-id="@pet.Id">
+                    <article class="containerPet">
+                        <div class="containerImgPet">
+                            @if (pet.Type != 0)
+                            {
+                                <img
+                        src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/50/000000/external-cat-animal-body-icongeek26-outline-colour-icongeek26.png" />
+                            }
+                            else
+                            {
+                                <img
+                        src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/50/000000/external-dog-animal-body-icongeek26-outline-colour-icongeek26.png" />
+                            }
+
+                            @if (pet.History == null)
+                            {
+                                <p class="newPet">New</p>
+                            }
+                        </div>
+                        <p class="namePet">@pet.Name</p>
+                        <p><span class="references">Breed:</span> @pet.Breed</p>
+                        <p><span class="references">Gender:</span> @pet.Gender</p>
+                        <p><span class="references">Weight:</span> @pet.Weight Kg</p>
+                        <div class="containerOwner">
+                            <img src="https://img.icons8.com/pastel-glyph/25/3434df/person-male--v2.png" />
+                            <p><span class="references">Owner</span> @pet.Owner?.Name @pet.Owner?.Surname</p>
+                        </div>
+                    </article>
+                </a>
+            }
+        }
+        else
+        {
+            <p>Nada</p>
+        }
+    </div>
+</section>

@@ -1,6 +1,5 @@
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Presentacion.exe
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Presentacion.deps.json
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Presentacion.runtimeconfig.json
@@ -26,7 +25,6 @@ C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\VetHouse.App.Presentacion.csprojAssemblyReference.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\VetHouse.App.Presentacion.AssemblyInfoInputs.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\VetHouse.App.Presentacion.AssemblyInfo.cs
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\VetHouse.App.Presentacion.csproj.CoreCompileInputs.cache
@@ -81,5 +79,12 @@ C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Persistencia.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Dominio.pdb
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\bin\Debug\netcoreapp3.1\VetHouse.App.Persistencia.pdb
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\OwnersFile\Index.cshtml.g.cs
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Register\RegisterVet.cshtml.g.cs
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Register\RegisterPetAndOwner.cshtml.g.cs
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\VetHouse.App.Presentacion.csproj.AssemblyReference.cache
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\VetHouse.App.Presentacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\scopedcss\bundle\VetHouse.App.Presentacion.styles.css
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Owner\AddVitalSign.cshtml.g.cs
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Vet\AssignedVetP.cshtml.g.cs
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Vet\PetDetails.cshtml.g.cs
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Vet\CreateHistory.cshtml.g.cs

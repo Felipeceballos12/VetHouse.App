@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4IVqFD2knIg/nMTLAFsK1w4Kgnglc/Sj6YFb2J7uL9X6dAhjKBfdyqsPXubsldhbBJ2nfp+ljSZ4KNAkr9Jn8A==",
+  "dgSpecHash": "1tK5Igq3HL85Bwa1zoD7vtE2/WO0d09nW5YazElxL5IdvG4rJFTksBxHUIlkQpQ+KMRui81OXS9bZfd4YbDYfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\cebal\\OneDrive\\Documents\\Code\\Ciclo3\\VetHouse\\VetHouse.App\\VetHouse.App.Presentacion\\VetHouse.App.Presentacion.csproj",
   "expectedPackageFiles": [
@@ -99,7 +99,8 @@
     "C:\\Users\\cebal\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\cebal\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\cebal\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\cebal\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\cebal\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\cebal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.20\\microsoft.netcore.app.host.win-x64.3.1.20.nupkg.sha512"
   ],
   "logs": []
 }

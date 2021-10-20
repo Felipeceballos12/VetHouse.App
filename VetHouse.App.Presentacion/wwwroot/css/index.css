@@ -29,6 +29,17 @@ header {
   padding: 1rem 3rem 1rem 0;
 }
 
+.nav-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-links a:hover {
+  color: #3232de;
+}
+
 .nav-links p {
   margin-right: 1rem;
 }
@@ -56,18 +67,50 @@ header {
 }
 
 main {
-  margin-top: 3rem;
-  margin-left: 9rem;
-  margin-right: 3rem;
+  margin: 3rem 3rem 3rem 9rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-add-vs {
+  width: 100%;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerAssing,
+.containerAddVS {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
 }
 
-.containerAssing {
+.containerPetDetails {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.containerPetDetails p {
+  display: block;
+}
+
+.containerPetDetails p strong {
+  color: #3434df;
 }
 
 .form-register {
@@ -82,7 +125,8 @@ main {
   font-size: 2rem;
 }
 
-.title-assign-vet-auxVet {
+.title-assign-vet-auxVet,
+.title-add-vs {
   margin-bottom: 2rem;
 }
 
@@ -105,11 +149,17 @@ main {
 
 .form-register-pet,
 .form-register-owner,
+.form-register-vet {
+  width: 53.5rem;
+}
+
+.form-register-pet,
+.form-register-owner,
 .form-register-vet,
 .form-add-vet {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-self: center;
 }
 
 /*
@@ -134,10 +184,35 @@ main {
   margin-right: 9rem;
 }
 
+.form-group-textarea {
+  width: 23.5rem;
+  height: 100%;
+  margin: 0 2rem 1rem 0;
+  resize: none !important;
+}
+
+.form-label-textarea {
+  color: #3434df;
+  font-size: 0.7rem;
+}
+
+#form-group-history {
+  margin: 0 2rem 1rem 0;
+}
+
+.form-group-addVS {
+  position: relative;
+  width: 23.5rem;
+  height: 2.875rem !important;
+  overflow: hidden;
+  margin: 0.2rem 2rem 0.2rem 0;
+}
+
 .form-group:nth-of-type(1),
 .form-group:nth-of-type(3),
 .form-group:nth-of-type(5),
-.form-group:nth-of-type(7) {
+.form-group:nth-of-type(7),
+.form-group:nth-of-type(9) {
   margin-left: 0;
 }
 
@@ -147,6 +222,16 @@ main {
   border: none;
   padding: 1.25rem 0 0.3rem;
   font-family: "Ubuntu", sans-serif;
+  background-color: #fbfbff;
+}
+
+.form-input-textarea {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #3434df;
+  font-family: "Ubuntu", "sans-serif";
+  padding: 0.3rem 0 0.3rem;
+  outline: none;
   background-color: #fbfbff;
 }
 
@@ -223,11 +308,12 @@ main {
 .container-btn {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 2rem;
 }
 
 .btn-next {
-  padding: 0.5rem 3rem;
+  padding: 0.6rem 3rem;
   border-radius: 1rem;
   background-color: #3434df;
   color: #fff;
@@ -247,10 +333,18 @@ main {
   cursor: pointer;
 }
 
-/* div,
-main,
-section {
+/*
+div {
   border: 1px solid red;
+}
+
+
+main {
+  border: 1px solid greenyellow;
+} */
+
+/* section {
+  border: 1px solid purple;
 } */
 
 @media screen and (max-width: 1046px) {
@@ -261,3 +355,173 @@ section {
     margin-left: 0;
   }
 }
+
+/* SEARCH PET */
+.containerSectionSearch {
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 1rem 0 1rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #97a1af;
+  background-color: #fbfbff;
+}
+
+.containerResultSearch {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerPet {
+  margin: 1rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.containerPet:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.containerImgPet {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newPet {
+  color: #fff;
+  font-size: 0.8rem;
+  background-color: #3232de;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+}
+
+.namePet {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.references {
+  color: #3434df;
+  font-size: 0.8rem;
+}
+
+.containerOwner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-top: 1px solid #97a1af;
+  padding-top: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.linkPet {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+
+/* END SEARCH PET */
+
+/* PET DETAILS */
+
+.containerPetDetailsPage {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.containerPetInfoAndOwnerInfo {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #97a1af;
+  margin-bottom: 2rem;
+}
+
+.containerPetInfoAndOwnerInfo div {
+  width: 20rem;
+}
+
+.containerPetInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 1rem 0.5rem;
+}
+
+.containerPetInfo p {
+  padding: 0 1rem 0.5rem 0;
+}
+
+.attributePet {
+  color: #3232de;
+  font-size: 0.9rem;
+}
+
+.subContainerNameAndImg {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.containerHistoryAndCS {
+  margin-bottom: 2rem;
+}
+
+.collapsed,
+.collapsedSV {
+  width: 100%;
+  outline: none;
+  padding: 1rem 2rem 1rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: start;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.collapsed:hover,
+.collapsedSV:hover {
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #3232de;
+  color: #fff;
+}
+
+.active {
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #3232de;
+  color: #fff;
+}
+
+.contentHistory,
+.contentVitalSign {
+  width: 100%;
+  display: none;
+  overflow: hidden;
+  padding: 1rem;
+  border: 1px solid #3434df;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+
+.linkCreateHistory {
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background-color: #3434df;
+  cursor: pointer;
+  border-radius: 0.6rem;
+}
+/* END PET DETAILS */

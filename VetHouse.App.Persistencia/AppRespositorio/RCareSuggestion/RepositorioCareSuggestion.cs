@@ -6,12 +6,7 @@ namespace VetHouse.App.Persistencia
 {
     public class RepositorioCareSuggestion : IRepositorioCareSuggestion
     {
-        private readonly AppVetHouseContext _appVetHouseContext;
-
-        public RepositorioCareSuggestion(AppVetHouseContext appVetHouseContext)
-        {
-            _appVetHouseContext = appVetHouseContext;
-        }
+        private readonly AppVetHouseContext _appVetHouseContext = new AppVetHouseContext();
 
         CareSuggestion IRepositorioCareSuggestion.AddCareSuggestion(CareSuggestion careSuggestion)
         {
@@ -47,7 +42,7 @@ namespace VetHouse.App.Persistencia
             {
                 careSuggestionFound.Description = careSuggestion.Description;
                 careSuggestionFound.CreatedAtCareSuggestion = careSuggestion.CreatedAtCareSuggestion;
-                
+
                 _appVetHouseContext.SaveChanges();
             }
 

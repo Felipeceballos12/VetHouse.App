@@ -27,6 +27,10 @@ namespace VetHouse.App.Presentacion
             services.AddRazorPages();
             services.AddSingleton<IRepositorioOwner, RepositorioOwner>();
             services.AddSingleton<IRepositorioVet, RepositorioVet>();
+            services.AddSingleton<IRepositorioPet, RepositorioPet>();
+            services.AddSingleton<IRepositorioVitalSign, RepositorioVitalSign>();
+            services.AddSingleton<IRepositorioHistory, RepositorioHistory>();
+            services.AddSingleton<IRepositorioCareSuggestion, RepositorioCareSuggestion>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

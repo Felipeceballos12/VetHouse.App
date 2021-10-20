@@ -14,5 +14,8 @@ namespace VetHouse.App.Persistencia
         AuxVet AssignAuxVet(int idPet, int idAuxVet);
         Owner AssignOwner(int idPet, int idOwner);
         History AssignHistory(int idPet, int idHistory);
+        Pet GetOwnerPet(int ownerId);
+        Vet AssignVet(int idPet, int idVet);
+        IEnumerable<Pet> GetAllPetsOfVet(int idVet);
     }
 }

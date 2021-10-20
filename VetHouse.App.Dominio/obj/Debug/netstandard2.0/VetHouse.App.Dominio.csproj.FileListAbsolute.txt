@@ -1,9 +1,10 @@
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\bin\Debug\netstandard2.0\VetHouse.App.Dominio.deps.json
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\bin\Debug\netstandard2.0\VetHouse.App.Dominio.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\bin\Debug\netstandard2.0\VetHouse.App.Dominio.pdb
-C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.csprojAssemblyReference.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.AssemblyInfoInputs.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.AssemblyInfo.cs
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.csproj.CoreCompileInputs.cache
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.dll
 C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.pdb
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.csproj.AssemblyReference.cache
+C:\Users\cebal\OneDrive\Documents\Code\Ciclo3\VetHouse\VetHouse.App\VetHouse.App.Dominio\obj\Debug\netstandard2.0\VetHouse.App.Dominio.GeneratedMSBuildEditorConfig.editorconfig

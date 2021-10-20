@@ -6,12 +6,12 @@ namespace VetHouse.App.Persistencia
 {
     public class RepositorioVitalSign : IRepositorioVitalSign
     {
-        private readonly AppVetHouseContext _appVetHouseContext;
+        private readonly AppVetHouseContext _appVetHouseContext = new AppVetHouseContext();
 
-        public RepositorioVitalSign(AppVetHouseContext appVetHouseContext)
-        {
-            _appVetHouseContext = appVetHouseContext;
-        }
+        // public RepositorioVitalSign(AppVetHouseContext appVetHouseContext)
+        // {
+        //     _appVetHouseContext = appVetHouseContext;
+        // }
 
         VitalSign IRepositorioVitalSign.AddVitalSign(VitalSign vitalSign)
         {

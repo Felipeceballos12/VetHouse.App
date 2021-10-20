@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VetHouse.App.Persistencia.Migrations
 {
-    public partial class Entidades : Migration
+    public partial class Entidadesv1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,25 +14,11 @@ namespace VetHouse.App.Persistencia.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedAtHistory = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Diagnose = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CareSuggestionsId = table.Column<int>(type: "int", nullable: true),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedAtCareSuggestion = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    HeartRate = table.Column<float>(type: "real", nullable: true),
-                    BreathingFreq = table.Column<float>(type: "real", nullable: true),
-                    Temperature = table.Column<float>(type: "real", nullable: true),
-                    HealthStatus = table.Column<int>(type: "int", nullable: true)
+                    Diagnose = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Histories", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Histories_Histories_CareSuggestionsId",
-                        column: x => x.CareSuggestionsId,
-                        principalTable: "Histories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -58,13 +44,57 @@ namespace VetHouse.App.Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CareSuggestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAtCareSuggestion = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HistoryId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CareSuggestions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CareSuggestions_Histories_HistoryId",
+                        column: x => x.HistoryId,
+                        principalTable: "Histories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "VitalSigns",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HeartRate = table.Column<float>(type: "real", nullable: false),
+                    BreathingFreq = table.Column<float>(type: "real", nullable: false),
+                    Temperature = table.Column<float>(type: "real", nullable: false),
+                    HealthStatus = table.Column<int>(type: "int", nullable: false),
+                    CreatedAtVitalSign = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HistoryId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VitalSigns", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_VitalSigns_Histories_HistoryId",
+                        column: x => x.HistoryId,
+                        principalTable: "Histories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pets",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Type = table.Column<int>(type: "int", nullable: false),
                     Breed = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -74,9 +104,9 @@ namespace VetHouse.App.Persistencia.Migrations
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
                     AuxVetId = table.Column<int>(type: "int", nullable: true),
-                    VetId = table.Column<int>(type: "int", nullable: true),
                     HistoryId = table.Column<int>(type: "int", nullable: true),
-                    OwnerId = table.Column<int>(type: "int", nullable: true)
+                    OwnerId = table.Column<int>(type: "int", nullable: true),
+                    VetId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -108,9 +138,9 @@ namespace VetHouse.App.Persistencia.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Histories_CareSuggestionsId",
-                table: "Histories",
-                column: "CareSuggestionsId");
+                name: "IX_CareSuggestions_HistoryId",
+                table: "CareSuggestions",
+                column: "HistoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pets_AuxVetId",
@@ -131,18 +161,29 @@ namespace VetHouse.App.Persistencia.Migrations
                 name: "IX_Pets_VetId",
                 table: "Pets",
                 column: "VetId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VitalSigns_HistoryId",
+                table: "VitalSigns",
+                column: "HistoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "CareSuggestions");
+
+            migrationBuilder.DropTable(
                 name: "Pets");
 
             migrationBuilder.DropTable(
-                name: "Histories");
+                name: "VitalSigns");
 
             migrationBuilder.DropTable(
                 name: "Persons");
+
+            migrationBuilder.DropTable(
+                name: "Histories");
         }
     }
 }

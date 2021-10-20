@@ -1,0 +1,133 @@
+﻿@page
+@using VetHouse.App.Dominio
+@model VetHouse.App.Presentacion.Pages.Register.Register.RegisterPetAndOwnerModel
+@{
+}
+<form method="post" class="containerForm">
+    <section class="section-register-pet form-register">
+        <h1 class="title-register-pet">Pet</h1>
+        <div class="icon-pet"></div>
+        <p class="subTitle-register-pet">Register Pet</p>
+        <div class="form-register-pet">
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newPet.Name" class="form-input" required>
+                <label asp-for="newPet.Name" class="form-label">
+                    <span class="content-name">Pet's name</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <select asp-for="newPet.Type" asp-items="Html.GetEnumSelectList<TypePet>()" class="form-input"
+                    required></select>
+                <label asp-for="newPet.Type" class="form-label">
+                    <span class="content-name">Type</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newPet.Breed" class="form-input" required>
+                <label asp-for="newPet.Breed" class="form-label">
+                    <span class="content-name">Breed</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input asp-for="newPet.DateOfBirth" class="form-input">
+                <label asp-for="newPet.DateOfBirth" class="form-label">
+                    <span class="content-name">Date of birth</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newPet.Weight" class="form-input weight-input" step="0.01" required>
+                <label asp-for="newPet.Weight" class="form-label">
+                    <span class="content-name">Weight</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <select asp-for="newPet.Gender" asp-items="Html.GetEnumSelectList<GenderPet>()" class="form-input"
+                    required></select>
+                <label asp-for="newPet.Gender" class="form-label">
+                    <span class="content-name">Gender</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newPet.Address" class="form-input" required>
+                <label asp-for="newPet.Address" class="form-label">
+                    <span class="content-name">Address</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newPet.Longitude" class="form-input" step="0.01" required>
+                <label asp-for="newPet.Longitude" class="form-label">
+                    <span class="content-name">Longitude</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newPet.Latitud" class="form-input" step="0.01" required>
+                <label asp-for="newPet.Latitud" class="form-label">
+                    <span class="content-name">Latitud</span>
+                </label>
+            </div>
+        </div>
+    </section>
+    <section class="section-register-owner form-register">
+        <h1 class="title-register-owner">Owner</h1>
+        <div class="icon-owner"></div>
+        <p class="subTitle-register-owner">Register Owner</p>
+        <div class="form-register-owner">
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newOwner.Name" class="form-input" required>
+                <label asp-for="newOwner.Name" class="form-label">
+                    <span class="content-name">Name</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newOwner.Surname" class="form-input" required>
+                <label asp-for="newOwner.Surname" class="form-label">
+                    <span class="content-name">Surname</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newOwner.PhoneNumber" class="form-input" required>
+                <label asp-for="newOwner.PhoneNumber" class="form-label">
+                    <span class="content-name">Phone Number</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <select asp-for="newOwner.Gender" asp-items="Html.GetEnumSelectList<GenderPerson>()" class="form-input"
+                    required></select>
+                <label asp-for="newOwner.Gender" class="form-label">
+                    <span class="content-name">Gender</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" asp-for="newOwner.Email" type="email" class="form-input" required>
+                <label asp-for="newOwner.Email" class="form-label">
+                    <span class="content-name">Email</span>
+                </label>
+            </div>
+        </div>
+    </section>
+    <section class="section-add-vet form-register">
+        <div class="containerAssing">
+            <div>
+                <h1 class="title-assign-vet-auxVet">Assign Vet & Aux Vet</h1>
+                <div class="form-group-assign">
+                    <select name="idVet" class="form-input" required>
+                        @foreach (var vet in @Model.vets)
+                        {
+                            <option value="@vet.Id">@vet.Name @vet.Surname</option>
+                        }
+                    </select>
+                    <label for="idVet" class="form-label">
+                        <span class="content-name">Assing Vet</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <img src="~/imgs/personAlone.png" alt="Person">
+            </div>
+        </div>
+    </section>
+    <div class="container-btn">
+        <button class="btn-back btn" type="button">BACK</button>
+        <button class="btn-next btn" type="button">NEXT</button>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+﻿@page
+@model VetHouse.App.Presentacion.Pages.PetDetailsModel
+@{
+}
+<section class="containerPetDetailsPage">
+    <div class="containerPetInfoAndOwnerInfo">
+        <div>
+            <h1>Info Pet:</h1>
+            <div class="containerPetInfo">
+                <p><span class="attributePet">Name: </span> @Model.pet.Name</p>
+                <p><span class="attributePet">Gender: </span> @Model.pet.Gender</p>
+                <p><span class="attributePet">Breed: </span> @Model.pet.Breed</p>
+                <p><span class="attributePet">Type: </span> @Model.pet.Type</p>
+                <p><span class="attributePet">Weight: </span> @Model.pet.Weight</p>
+                <p><span class="attributePet">Address: </span> @Model.pet.Address</p>
+            </div>
+        </div>
+        <div>
+            <h1>Info Owner:</h1>
+            <div class="containerPetInfo">
+                <p><span class="attributePet">Name: </span> @Model.pet.Owner.Name @Model.pet.Owner.Surname</p>
+                <p><span class="attributePet">Phone Number: </span> @Model.pet.Owner.PhoneNumber</p>
+                <p><span class="attributePet">Gender: </span> @Model.pet.Owner.Gender</p>
+                <p><span class="attributePet">Email: </span> @Model.pet.Owner.Email</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="containerHistoryAndCS">
+            <button type="button" class="collapsed">History: </button>
+            <div class="contentHistory">
+                @if (Model.pet.History != null)
+                {
+                    <p><span class="attributePet">Diagnose: </span> @Model.pet.History.Diagnose</p>
+                }
+                else
+                {
+                    <a class="linkCreateHistory" asp-page="./CreateHistory" asp-route-id="@Model.pet.Id">Create History</a>
+                }
+            </div>
+        </div>
+        @if (Model.pet.History != null)
+        {
+            <div class=" containerHistoryAndCS">
+                <button type="button" class="collapsedSV">Vital Sign: </button>
+                <div class="contentVitalSign">
+                    Enfermo
+                </div>
+            </div>
+        }
+    </div>
+</section>

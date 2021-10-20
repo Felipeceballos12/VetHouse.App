@@ -2,7 +2,7 @@
 
 namespace VetHouse.App.Persistencia.Migrations
 {
-    public partial class Entidades_v5 : Migration
+    public partial class Entidadesv3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
