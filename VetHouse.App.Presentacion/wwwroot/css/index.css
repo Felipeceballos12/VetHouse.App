@@ -29,7 +29,11 @@ header {
   padding: 1rem 3rem 1rem 0;
 }
 
-.nav-links a {
+.sub-nav-links {
+  display: none;
+}
+
+.sub-nav-links a {
   display: inline-block;
   margin-right: 1rem;
   text-decoration: none;
@@ -64,6 +68,16 @@ header {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.linksNavSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 main {
@@ -150,7 +164,7 @@ main {
 .form-register-pet,
 .form-register-owner,
 .form-register-vet {
-  width: 53.5rem;
+  width: 51rem;
 }
 
 .form-register-pet,
@@ -170,7 +184,7 @@ main {
 
 .form-group {
   position: relative;
-  width: 23.5rem;
+  width: 22rem;
   height: 2.875rem !important;
   overflow: hidden;
   margin: 0 2rem 1rem;
@@ -333,26 +347,86 @@ main {
   cursor: pointer;
 }
 
-/*
-div {
+/* div {
   border: 1px solid red;
 }
 
-
 main {
   border: 1px solid greenyellow;
-} */
+}
 
-/* section {
+section {
   border: 1px solid purple;
 } */
 
-@media screen and (max-width: 1046px) {
+@media screen and (max-width: 1010px) {
+  .form-group:nth-of-type(2),
+  .form-group:nth-of-type(4),
+  .form-group:nth-of-type(6),
+  .form-group:nth-of-type(8) {
+    margin-right: 0;
+  }
+
+  .form-register-pet,
+  .form-register-owner,
+  .form-register-vet {
+    width: 48.5rem;
+  }
+
+  .navSide {
+    display: none;
+  }
+
+  main {
+    margin: 3rem 3rem;
+  }
+
+  .sub-nav-links {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 934px) {
+  .containerAssing div:nth-of-type(2) {
+    display: none;
+  }
+
+  .form-group-assign {
+    margin-right: 0;
+    width: 22rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .form-register-pet,
+  .form-register-owner,
+  .form-register-vet {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .form-group:nth-of-type(2),
   .form-group:nth-of-type(4),
   .form-group:nth-of-type(6),
   .form-group:nth-of-type(8) {
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 832px) {
+  .form-group:nth-of-type(2),
+  .form-group:nth-of-type(4),
+  .form-group:nth-of-type(6),
+  .form-group:nth-of-type(8) {
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 488px) {
+  .form-group {
+    margin-right: 0 !important;
   }
 }
 
@@ -491,19 +565,23 @@ main {
   border: none;
   background-color: #fff;
   cursor: pointer;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .collapsed:hover,
 .collapsedSV:hover {
   border-radius: 0.5rem 0.5rem 0 0;
-  background-color: #3232de;
-  color: #fff;
+  background-color: #a496f0;
+  transition: 0.1s ease-in-out;
 }
 
 .active {
   border-radius: 0.5rem 0.5rem 0 0;
-  background-color: #3232de;
-  color: #fff;
+  background-color: #a496f0;
 }
 
 .contentHistory,
@@ -512,7 +590,7 @@ main {
   display: none;
   overflow: hidden;
   padding: 1rem;
-  border: 1px solid #3434df;
+  border: 1px solid #a496f0;
   border-radius: 0rem 0rem 0.5rem 0.5rem;
 }
 
@@ -520,8 +598,53 @@ main {
   text-decoration: none;
   padding: 1rem 1.5rem;
   color: #fff;
-  background-color: #3434df;
+  background-color: #715bf0;
   cursor: pointer;
   border-radius: 0.6rem;
 }
+
+.containerVitalSign {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.containerVitalSign p {
+  margin-bottom: 0.5rem;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  border-right: 1px solid #000;
+}
+
+.attributeVS {
+  font-size: 0.9rem;
+  color: #3434df;
+}
+
+.containerVitalSign p:nth-child(5) {
+  border: none;
+}
+
+.containerBtnAddCS {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #97a1af;
+}
+
+.btnAdd {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #715bf0;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 /* END PET DETAILS */

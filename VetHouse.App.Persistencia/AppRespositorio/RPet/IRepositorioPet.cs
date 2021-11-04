@@ -9,7 +9,7 @@ namespace VetHouse.App.Persistencia
         Pet AddPet(Pet pet);
         Pet UpdatePet(Pet pet);
         void DeletePet(int idPet);
-        Pet GetPet(int idPet);
+        Pet GetPet(int petId);
 
         AuxVet AssignAuxVet(int idPet, int idAuxVet);
         Owner AssignOwner(int idPet, int idOwner);
@@ -17,5 +17,7 @@ namespace VetHouse.App.Persistencia
         Pet GetOwnerPet(int ownerId);
         Vet AssignVet(int idPet, int idVet);
         IEnumerable<Pet> GetAllPetsOfVet(int idVet);
+        Pet GetPetWithOwner(int idPet);
+        Pet GetPetWithHistory(int idPet);
     }
 }

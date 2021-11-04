@@ -31,6 +31,7 @@ namespace VetHouse.App.Presentacion
             services.AddSingleton<IRepositorioVitalSign, RepositorioVitalSign>();
             services.AddSingleton<IRepositorioHistory, RepositorioHistory>();
             services.AddSingleton<IRepositorioCareSuggestion, RepositorioCareSuggestion>();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +53,8 @@ namespace VetHouse.App.Presentacion
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

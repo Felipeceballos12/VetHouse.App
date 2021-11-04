@@ -14,7 +14,7 @@ namespace VetHouse.App.Presentacion.Pages
         private readonly IRepositorioVitalSign _repoVitalSign;
         private readonly IRepositorioHistory _repoHistory;
         private readonly IRepositorioPet _repoPet;
-        
+
         public VitalSign newVitalSign { get; set; }
         public Pet pet { get; set; }
 
@@ -39,6 +39,7 @@ namespace VetHouse.App.Presentacion.Pages
             var idHistory = getPet.History.Id;
 
             var getHistory = _repoHistory.AddVitalSign(idHistory, idVitalSign);
+            // var getVitalSign = _repoVitalSign.AssignHistory(idVitalSign, idHistory);
 
             return RedirectToPage("/Index");
         }

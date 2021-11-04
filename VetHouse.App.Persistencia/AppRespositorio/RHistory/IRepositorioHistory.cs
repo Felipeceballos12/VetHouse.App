@@ -13,5 +13,6 @@ namespace VetHouse.App.Persistencia
 
         CareSuggestion AddCareSuggestion(int idHistory, int idCareSuggestion);
         VitalSign AddVitalSign(int idHistory, int idVitalSign);
+        // History GetHistoryOfVitalSign(int idVitalSign);
     }
 }

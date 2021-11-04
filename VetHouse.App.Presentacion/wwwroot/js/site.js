@@ -19,6 +19,7 @@ const btnActive = document.querySelectorAll(".btn");
 
 showForm(currentFormRegister, formCurrent);
 
+
 function showForm(n, formCurrent) {
     formCurrent[n].style.display = "block";
 
@@ -34,7 +35,6 @@ function showForm(n, formCurrent) {
         document.querySelector(".btn-next").innerHTML = "NEXT";
     }
 }
-
 
 btnActive.forEach(btn => {
     btn.addEventListener('click', () => {

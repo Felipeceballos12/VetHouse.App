@@ -1,0 +1,14 @@
+﻿@page
+@using VetHouse.App.Dominio
+@model VetHouse.App.Presentacion.Pages.CreateCareSuggestionModel
+@{
+}
+<section>
+    <div>
+        <p><span class="attributeVS">Heart Rate: </span>@Model.vitalSign.HeartRate</p>
+        <p><span class="attributeVS">Breathing Frequency: </span>@Model.vitalSign.BreathingFreq</p>
+        <p><span class="attributeVS">Temperature: </span>@Model.vitalSign.Temperature</p>
+        <p><span class="attributeVS">Health Status: </span>@Model.vitalSign.HealthStatus</p>
+        <p><span class="attributeVS">Created At: </span>@Model.vitalSign.CreatedAtVitalSign</p>
+    </div>
+</section>

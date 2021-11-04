@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VetHouse.App.Dominio;
+using Microsoft.EntityFrameworkCore;
 
 namespace VetHouse.App.Persistencia
 {
@@ -58,7 +59,31 @@ namespace VetHouse.App.Persistencia
 
         VitalSign IRepositorioVitalSign.GetVitalSign(int idVitalSign)
         {
-            return _appVetHouseContext.VitalSigns.FirstOrDefault(vs => vs.Id == idVitalSign);
+            return _appVetHouseContext.VitalSigns.Include(vs => vs.History).FirstOrDefault(vs => vs.Id == idVitalSign);
         }
+
+
+        // VitalSign IRepositorioVitalSign.AssignHistory(int idVitalSign, int idHistory)
+        // {
+        //     var vitalSignFound = _appVetHouseContext.VitalSigns.FirstOrDefault(vs => vs.Id == idVitalSign);
+        //     var historyFound = _appVetHouseContext.Histories.FirstOrDefault(h => h.Id == idHistory);
+
+        //     if (vitalSignFound != null)
+        //     {
+        //         if (vitalSignFound.idHistory != null)
+        //         {
+        //             if (historyFound != null)
+        //             {
+        //                 vitalSignFound.idHistory = historyFound.Id;
+        //                 vitalSignFound.History = historyFound;
+        //                 _appVetHouseContext.SaveChanges();
+
+        //                 return vitalSignFound;
+        //             }
+        //         }
+        //     }
+
+        //     return null;
+        // }
     }
 }

@@ -17,24 +17,46 @@
     <header>
         <nav>
             <div class="nav-links">
-                <a asp-area="" asp-page="/Vet/AssignedVetP">Pets Assign</a>
-                <a asp-area="" asp-page="/Register/RegisterPetAndOwner">Pet and Owner</a>
-                <a asp-area="" asp-page="/Register/RegisterVet">Vet</a>
-                <a asp-area="" asp-page="/Owner/AddVitalSign">Add Vital Sign</a>
+                <div class="sub-nav-links">
+                    <a asp-area="" asp-page="/Vet/AssignedVetP">Pets Assign</a>
+                    <a asp-area="" asp-page="/Register/RegisterPetAndOwner">Add Pet</a>
+                    <a asp-area="" asp-page="/Register/RegisterVet">Add Vet</a>
+                    <a asp-area="" asp-page="/Owner/AddVitalSign">Add Vital Sign</a>
+                </div>
                 <p>Felipe Ceballos</p>
                 <div class="profile-picture"></div>
             </div>
         </nav>
     </header>
-    <nav class="navSide"></nav>
+    <nav class="navSide">
+        <div class="subContainerNavSide1">
+            <a asp-area="" asp-page="/Register/RegisterPetAndOwner" class="linksNavSide">
+                <img src="https://img.icons8.com/pastel-glyph/40/909AA9/dog-cone--v2.png" />
+            </a>
+            <a asp-area="" asp-page="/Owner/AddVitalSign" class="linksNavSide">
+                <img src="https://img.icons8.com/ios/40/909AA9/pet.png" />
+            </a>
+            <a asp-area="" asp-page="/Register/RegisterVet" class="linksNavSide">
+                <img
+                    src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/40/909AA9/external-doctor-dental-kiranshastry-lineal-kiranshastry.png" />
+            </a>
+            <a asp-area="" asp-page="/Vet/AssignedVetP" class="linksNavSide">
+                <img
+                    src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/40/909AA9/external-veterinarian-female-profession-vitaliy-gorbachev-lineal-vitaly-gorbachev.png" />
+            </a>
+        </div>
+        <div class="subContainerNavSide2">
+            <a href="#" class="linksNavSide">
+                <img src="https://img.icons8.com/ios-glyphs/40/E4E4EF/shutdown.png" />
+            </a>
+        </div>
+    </nav>
     <main role="main">
         @RenderBody()
     </main>
 
     @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
-    <script src="~/js/site.js" asp-append-version="true" defer></script>
-    <script src="~/js/collapsed.js" asp-append-version="true" defer></script>
 
     @RenderSection("Scripts", required: false)
 </body>

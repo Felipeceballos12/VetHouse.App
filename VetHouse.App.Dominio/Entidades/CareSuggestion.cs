@@ -8,5 +8,8 @@ namespace VetHouse.App.Dominio
         public String Description { get; set; }
 
         public System.DateTime CreatedAtCareSuggestion { get; set; }
+
+        public int idCareSuggestion { get; set; }
+        public CareSuggestion careSuggestion { get; set; }
     }
 }

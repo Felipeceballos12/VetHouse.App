@@ -18,35 +18,65 @@
         <div>
             <h1>Info Owner:</h1>
             <div class="containerPetInfo">
-                <p><span class="attributePet">Name: </span> @Model.pet.Owner.Name @Model.pet.Owner.Surname</p>
-                <p><span class="attributePet">Phone Number: </span> @Model.pet.Owner.PhoneNumber</p>
-                <p><span class="attributePet">Gender: </span> @Model.pet.Owner.Gender</p>
-                <p><span class="attributePet">Email: </span> @Model.pet.Owner.Email</p>
+                <p><span class="attributePet">Name: </span> @Model.petOwner.Owner.Name @Model.pet.Owner.Surname</p>
+                <p><span class="attributePet">Phone Number: </span> @Model.petOwner.Owner.PhoneNumber</p>
+                <p><span class="attributePet">Gender: </span> @Model.petOwner.Owner.Gender</p>
+                <p><span class="attributePet">Email: </span> @Model.petOwner.Owner.Email</p>
             </div>
         </div>
     </div>
     <div>
         <div class="containerHistoryAndCS">
-            <button type="button" class="collapsed">History: </button>
+            <button type="button" class="collapsed">
+                <p>History:</p>
+                <img class="arrowUp"
+                    src="https://img.icons8.com/external-those-icons-fill-those-icons/20/000000/external-up-arrows-those-icons-fill-those-icons-6.png" />
+            </button>
             <div class="contentHistory">
-                @if (Model.pet.History != null)
-                {
-                    <p><span class="attributePet">Diagnose: </span> @Model.pet.History.Diagnose</p>
-                }
-                else
+                @if (Model.petHistory.History == null)
                 {
                     <a class="linkCreateHistory" asp-page="./CreateHistory" asp-route-id="@Model.pet.Id">Create History</a>
                 }
+                else
+                {
+                    <p><span class="attributePet">Diagnose: </span> @Model.petHistory.History.Diagnose</p>
+                }
             </div>
         </div>
-        @if (Model.pet.History != null)
+        @if (Model.petHistory.History != null)
         {
             <div class=" containerHistoryAndCS">
-                <button type="button" class="collapsedSV">Vital Sign: </button>
+                <button type="button" class="collapsedSV">
+                    <p>Vital Sign:</p>
+                    <img class="arrowUpSV"
+                    src="https://img.icons8.com/external-those-icons-fill-those-icons/20/000000/external-up-arrows-those-icons-fill-those-icons-6.png" />
+                </button>
                 <div class="contentVitalSign">
-                    Enfermo
+                    @if (Model.petHistory.History.VitalSigns == null)
+                    {
+                        <p>No have vital sign yet</p>
+                    }
+                    else
+                    {
+                        @foreach (var vitalSign in Model.petHistory.History.VitalSigns)
+                        {
+                            <div class="containerVitalSign">
+                                <p><span class="attributeVS">Heart Rate: </span>@vitalSign.HeartRate</p>
+                                <p><span class="attributeVS">Breathing Frequency: </span>@vitalSign.BreathingFreq</p>
+                                <p><span class="attributeVS">Temperature: </span>@vitalSign.Temperature</p>
+                                <p><span class="attributeVS">Health Status: </span>@vitalSign.HealthStatus</p>
+                                <p><span class="attributeVS">Created At: </span>@vitalSign.CreatedAtVitalSign</p>
+                            </div>
+                            <div class="containerBtnAddCS">
+                                <a class="btnAdd" asp-page="./CreateCareSuggestion" asp-route-id="@vitalSign.Id">
+                                    Add Care Suggestions
+                                </a>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
         }
     </div>
 </section>
+<script src="~/js/collapsed.js" asp-append-version="true" defer></script>

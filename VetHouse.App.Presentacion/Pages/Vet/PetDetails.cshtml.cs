@@ -16,6 +16,8 @@ namespace VetHouse.App.Presentacion.Pages
         private readonly IRepositorioOwner _repoOwner;
         // private readonly IRepositorioCareSuggestion _repoCareSuggestion;
         public Pet pet { get; set; }
+        public Pet petHistory { get; set; }
+        public Pet petOwner { get; set; }
         public History history { get; set; }
         public Owner owner { get; set; }
         // public CareSuggestion careSuggestion { get; set; }
@@ -30,7 +32,12 @@ namespace VetHouse.App.Presentacion.Pages
         public IActionResult OnGet(int id)
         {
             pet = _repoPet.GetPet(id);
-            history = _repoHistory.GetHistory(pet.History.Id);
+            petHistory = _repoPet.GetPetWithHistory(id);
+            // history = _repoHistory.GetHistory(petHistory.History.Id);
+            // Console.WriteLine(petHistory.History.VitalSigns == null);
+            petOwner = _repoPet.GetPetWithOwner(id);
+
+            // history = _repoHistory.GetHistory(pet.History.Id);
 
             if (pet == null)
             {

@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using VetHouse.App.Dominio;
 using VetHouse.App.Persistencia;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VetHouse.App.Presentacion.Pages.Register.Register
 {
+    [Authorize]
     public class RegisterPetAndOwnerModel : PageModel
     {
         public readonly IRepositorioPet _repoPet;
@@ -17,7 +19,7 @@ namespace VetHouse.App.Presentacion.Pages.Register.Register
         public Pet newPet { get; set; }
         public Owner newOwner { get; set; }
         public IEnumerable<Vet> vets { get; set; }
-        
+
         public RegisterPetAndOwnerModel(IRepositorioPet _repoPet, IRepositorioOwner _repoOwner, IRepositorioVet _repoVet)
         {
             this._repoPet = _repoPet;

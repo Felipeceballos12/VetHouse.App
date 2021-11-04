@@ -3,3 +3,19 @@
 @{
     ViewData["Title"] = "VetHouse";
 }
+@if (User.Identity.IsAuthenticated)
+{
+    <table>
+        @foreach (var x in User.Claims)
+        {
+            <tr>
+                <td>
+                    @x.Type
+                </td>
+                <td>
+                    @x.Value
+                </td>
+            </tr>
+        }
+    </table>
+}

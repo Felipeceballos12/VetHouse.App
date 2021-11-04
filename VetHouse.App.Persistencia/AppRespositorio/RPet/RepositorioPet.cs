@@ -59,7 +59,8 @@ namespace VetHouse.App.Persistencia
 
         Pet IRepositorioPet.GetPet(int idPet)
         {
-            return _appVetHouseContext.Pets.Include(pet => pet.Owner).Include(pet => pet.History).FirstOrDefault(pet => pet.Id == idPet);
+            var pets = _appVetHouseContext.Pets.FirstOrDefault(pet => pet.Id == idPet);
+            return pets;
         }
 
         AuxVet IRepositorioPet.AssignAuxVet(int idPet, int idAuxVet)
@@ -159,7 +160,7 @@ namespace VetHouse.App.Persistencia
 
         IEnumerable<Pet> IRepositorioPet.GetAllPetsOfVet(int idVet)
         {
-            var petsFound = _appVetHouseContext.Pets.Include(pet => pet.Owner).Where(pet => pet.idVet == idVet).ToList();
+            var petsFound = _appVetHouseContext.Pets.Include(p => p.Owner).Include(p => p.History).Where(pet => pet.Vet.Id == idVet).ToList().OrderByDescending(p => p.Id);
 
             if (petsFound != null)
             {
@@ -170,6 +171,30 @@ namespace VetHouse.App.Persistencia
         }
 
 
+        Pet IRepositorioPet.GetPetWithHistory(int idPet)
+        {
+            var petFound = _appVetHouseContext.Pets.Include(p => p.History).ThenInclude(history => history.VitalSigns).FirstOrDefault(pet => pet.Id == idPet);
+
+            if (petFound != null)
+            {
+                return petFound;
+            }
+
+            return null;
+        }
+
+
+        Pet IRepositorioPet.GetPetWithOwner(int idPet)
+        {
+            var petFound = _appVetHouseContext.Pets.Include(p => p.Owner).FirstOrDefault(pet => pet.Id == idPet);
+
+            if (petFound != null)
+            {
+                return petFound;
+            }
+
+            return null;
+        }
         // IEnumerable<Pet> IRepositorioPet.GetVetPets(int vetId)
         // {
         //     var petsFound = _appVetHouseContext.Pets.Where(pet => pet.idVet == vetId).FirstOrDefault();

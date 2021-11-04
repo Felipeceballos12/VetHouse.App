@@ -35,9 +35,17 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Property<int?>("HistoryId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("careSuggestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idCareSuggestion")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("HistoryId");
+
+                    b.HasIndex("careSuggestionId");
 
                     b.ToTable("CareSuggestions");
                 });
@@ -174,15 +182,18 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.Property<float>("HeartRate")
                         .HasColumnType("real");
 
-                    b.Property<int?>("HistoryId")
-                        .HasColumnType("int");
-
                     b.Property<float>("Temperature")
                         .HasColumnType("real");
 
+                    b.Property<int?>("historyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idHistory")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("HistoryId");
+                    b.HasIndex("historyId");
 
                     b.ToTable("VitalSigns");
                 });
@@ -225,6 +236,12 @@ namespace VetHouse.App.Persistencia.Migrations
                     b.HasOne("VetHouse.App.Dominio.History", null)
                         .WithMany("CareSuggestions")
                         .HasForeignKey("HistoryId");
+
+                    b.HasOne("VetHouse.App.Dominio.CareSuggestion", "careSuggestion")
+                        .WithMany()
+                        .HasForeignKey("careSuggestionId");
+
+                    b.Navigation("careSuggestion");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.Pet", b =>
@@ -256,9 +273,11 @@ namespace VetHouse.App.Persistencia.Migrations
 
             modelBuilder.Entity("VetHouse.App.Dominio.VitalSign", b =>
                 {
-                    b.HasOne("VetHouse.App.Dominio.History", null)
+                    b.HasOne("VetHouse.App.Dominio.History", "history")
                         .WithMany("VitalSigns")
-                        .HasForeignKey("HistoryId");
+                        .HasForeignKey("historyId");
+
+                    b.Navigation("history");
                 });
 
             modelBuilder.Entity("VetHouse.App.Dominio.History", b =>

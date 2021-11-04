@@ -126,5 +126,17 @@ namespace VetHouse.App.Persistencia
             return null;
         }
 
+        // History IRepositorioHistory.GetHistoryOfVitalSign(int idVitalSign)
+        // {
+        //     var historyFound = _appVetHouseContext.Histories.Where(h => h.VitalSigns.Id == idVitalSign);
+
+        //     if (historyFound != null)
+        //     {
+        //         return historyFound;
+        //     }
+
+        //     return null;
+        // }
+
     }
 }

@@ -10,5 +10,8 @@ namespace VetHouse.App.Dominio
         public float Temperature { get; set; }
         public TypeHealthStatus HealthStatus { get; set; }
         public DateTime CreatedAtVitalSign { get; set; }
+
+        public int idHistory { get; set; }
+        public History History { get; set; }
     }
 }

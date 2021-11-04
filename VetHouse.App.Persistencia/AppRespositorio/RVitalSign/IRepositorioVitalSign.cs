@@ -10,5 +10,6 @@ namespace VetHouse.App.Persistencia
         VitalSign UpdateVitalSign(VitalSign vitalSign);
         void DeleteVitalSign(int idVitalSign);
         VitalSign GetVitalSign(int idVitalSign);
+        // vitalSign AssignHistory(int idVitalSign, int idHistory);
     }
 }
